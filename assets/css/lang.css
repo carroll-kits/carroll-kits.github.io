@@ -1,11 +1,8 @@
 .lang-selector {
-    position: absolute;
     text-align: right;
-    top: 0; /* Adjust as needed */
-    right: 0; /* Adjust as needed */
     margin: 0 !important; /* Remove any margin */
     padding-top: 0 !important; /* Remove any padding */
-    height: 110px;
+    height: 115px;
 }
 
 .lang-selector form {
