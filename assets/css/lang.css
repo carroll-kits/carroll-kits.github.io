@@ -1,0 +1,22 @@
+.lang-selector {
+    position: absolute;
+    text-align: right;
+    top: 0; /* Adjust as needed */
+    right: 0; /* Adjust as needed */
+    margin: 0 !important; /* Remove any margin */
+    padding-top: 0 !important; /* Remove any padding */
+    height: 110px;
+}
+
+.lang-selector form {
+    display: inline-block; /* Ensure form width is determined by its contents */
+}
+
+.lang-selector label {
+    display: inline-block; /* Ensure form width is determined by its contents */
+}
+
+.lang-selector select {
+    width: 125; /* Adjust width as needed */
+    color: #000;
+}
