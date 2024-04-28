@@ -1,3 +1,8 @@
+/* Initially hide all content with [lang] attribute so they don't flicker */
+[lang] {
+    display: none;
+}
+
 .lang-selector {
     text-align: right;
     margin: 0 !important; /* Remove any margin */
