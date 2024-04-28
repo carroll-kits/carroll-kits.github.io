@@ -7,11 +7,17 @@ $(document).ready(function() {
         window.history.pushState({path: url.href}, '', url.href);
     }
 
-    // Function to get language from URL parameter or default to "en"
-    function getLanguageFromURL() {
-        var params = new URLSearchParams(window.location.search);
-        return params.get('lang') || 'en';
+// Function to get language from URL parameter or default to "en" if invalid
+function getLanguageFromURL() {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get('lang') || 'en';
+    // Check if the language is not in the list of valid languages, otherwise default to 'en'
+    if (!['en', 'es'].includes(lang)) {
+        lang = 'en';
+        updateURL(lang); // Update URL with valid language
     }
+    return lang;
+}
 
     // Function to show only elements corresponding to selected language
     function showSelectedLanguage(lang) {
