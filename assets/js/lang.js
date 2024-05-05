@@ -19,32 +19,32 @@ function getLanguageFromURL() {
     return lang;
 }
 
-    // Function to show only elements corresponding to selected language
-    function showSelectedLanguage(lang) {
-        $('[lang]').hide(); // Hide all elements with lang attribute
-        $('[lang="' + lang + '"]').show(); // Show only elements corresponding to selected language
-    }
+// Function to show only elements corresponding to selected language
+function showSelectedLanguage(lang) {
+    $('[lang]').hide(); // Hide all elements with lang attribute
+    $('[lang="' + lang + '"]').show(); // Show only elements corresponding to selected language
+}
 
-    // Handle click event on links with class "lang-link"
-    $('.lang-link').click(function(event) {
-        event.preventDefault(); // Prevent the default link behavior
-        var lang = $('#lang-switch').val(); // Get current language selection
-        var nextPageURL = $(this).attr('href') + '?lang=' + lang; // Construct URL with language parameter
-        // Redirect to the next page
-        window.location.href = nextPageURL;
-    });
+// Handle click event on links with class "lang-link"
+$('.lang-link').click(function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    var lang = $('#lang-switch').val(); // Get current language selection
+    var nextPageURL = $(this).attr('href') + '?lang=' + lang; // Construct URL with language parameter
+    // Redirect to the next page
+    window.location.href = nextPageURL;
+});
 
-    // Set selected language on page load
-    var langFromURL = getLanguageFromURL();
-    $('#lang-switch').val(langFromURL);
+// Set selected language on page load
+var langFromURL = getLanguageFromURL();
+$('#lang-switch').val(langFromURL);
 
-    // Show only elements corresponding to selected language on page load
-    showSelectedLanguage(langFromURL);
+// Show only elements corresponding to selected language on page load
+showSelectedLanguage(langFromURL);
 
-    // Handle change event on language selector
-    $('#lang-switch').change(function() {
-        var lang = $(this).val();
-        updateURL(lang); // Update URL with selected language
-        showSelectedLanguage(lang); // Show only elements corresponding to selected language
-    });
+// Handle change event on language selector
+$('#lang-switch').change(function() {
+    var lang = $(this).val();
+    updateURL(lang); // Update URL with selected language
+    showSelectedLanguage(lang); // Show only elements corresponding to selected language
+});
 });
